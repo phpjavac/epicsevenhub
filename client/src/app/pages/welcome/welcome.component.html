@@ -1,0 +1,50 @@
+<nz-tabset>
+  <nz-tab *ngFor="let item of gearTypeList" [nzTitle]="gearType[item]">
+    <div class="gear-page">
+      <div nz-row [nzGutter]="[16, 24]">
+        <div *ngFor="let gear of listObj[item]" nz-col [nzSpan]="6" [nzXs]="24" [nzXXl]="4" [nzXl]="6" [nzLg]="8"
+          [nzMd]="12" [nzSm]="12">
+          <div class="inner-box">
+            <nz-card [nzHoverable]="true" [nzSize]="'small'">
+              <div class="gear-header">
+                <div class="left">
+                  <img [src]="iconList[gear.gear]" alt="" srcset="">
+                </div>
+                <div class="right">
+                  <div [class]="gear.rank">
+                    {{gearRankType[gear.rank]}}{{gearType[gear.gear]}}
+                  </div>
+                  <div>
+                    等级：{{gear.level}}
+                  </div>
+                  <div class="enhance">
+                    {{gear.enhance}}
+                  </div>
+                </div>
+              </div>
+              <div class="gear-main">
+                <span>
+                  {{gearStateType[gear.maintype]}}:
+                </span>
+                <span>
+                  {{gear.mainvalue}}
+                </span>
+              </div>
+              <div class="gear-sub-state">
+                <p *ngFor="let state of gear.substats">
+                  <span>
+                    {{gearStateType[state.type]}}:
+                  </span>
+                  <span>
+                    {{state.value}}
+                  </span>
+                </p>
+              </div>
+            </nz-card>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </nz-tab>
+</nz-tabset>
