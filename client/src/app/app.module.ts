@@ -14,6 +14,7 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { HttpserviceService } from './services/httpservice.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(zh);
 
@@ -21,6 +22,7 @@ registerLocaleData(zh);
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
